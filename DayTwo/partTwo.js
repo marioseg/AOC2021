@@ -1003,6 +1003,7 @@ const instructions = [
 
 var position = 0;
 var depth = 0;
+var aim = 0;
 
 
 function doInstruction(instruction,value){
@@ -1010,12 +1011,13 @@ function doInstruction(instruction,value){
     switch (instruction) {
         case "forward":
           position = position + parseInt(value)
+          depth = depth + (aim *parseInt(value))
           break;
         case "down":
-            depth = depth + parseInt(value)
+            aim = aim + parseInt(value)
           break;
         case "up":
-            depth = depth - parseInt(value)
+            aim = aim - parseInt(value)
           break;
     }
     

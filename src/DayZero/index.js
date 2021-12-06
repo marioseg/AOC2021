@@ -1,11 +1,16 @@
-import { readFileSync } from "fs";
+import {readFileSync}from 'fs';
 import { URL } from "url";
 const readInput = (file) => {
-  const path = new URL(`./${file}`, import.meta.url).pathname;
+  const path = new URL(`${file}`, import.meta.url);
   return readFileSync(path, "utf8");
 };
 
 export const main = () => {
   const data = readInput("input.txt");
-  return 1;
+  return data;
 };
+
+export const getDataDayThree = () => {
+  const data = readInput("dayThreeInput.txt")
+  return data;
+}
